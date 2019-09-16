@@ -1,10 +1,10 @@
 const express = require('express');
 
-const RegisterRouter = require('./schemes/scheme-router.js');
+const RegisterRouter = require('./register/register-router.js');
 
 const server = express();
 
 server.use(express.json());
-server.use('/api/register', RegisterRouter);
+server.use('/api', RegisterRouter);
 
 module.exports = server;
