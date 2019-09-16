@@ -15,5 +15,17 @@ router.get('/', (req, res) => {
 
 });
 
+router.post('/register', (req, res) => {
+    let { username, password } = req.body;
+    const hash = bcrypt.hashSync(password)
+
+    Register.add({ username, password: hash })
+        .then(saved => {
+            res.status(201).json(saved);
+        })
+        .catch(error => {
+            res.status(500).json(error);
+        });
+});
 
 module.exports = router;
