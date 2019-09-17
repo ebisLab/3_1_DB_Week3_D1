@@ -11,6 +11,6 @@ module.exports = (req, res, next) => {
         res.status(401).json({ message: 'Where you think you goin foo?' })
     }
 
-    //change it so that it's relying on the user without refreshing
+    //change it so that it's relying on the user without refreshing.. or at least its supposed to
 
 }
