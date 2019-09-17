@@ -1,5 +1,4 @@
-const Register = require('../register/register-model');
-// const bcrypt = require('bcryptjs');
+
 
 
 module.exports = (req, res, next) => {
