@@ -1,5 +1,6 @@
 const express = require('express');
 const Register = require('./register-model.js');
+const restricted = require('../auth/restricted-middleware')
 const bcrypt = require('bcryptjs');
 const router = express.Router();
 
@@ -41,7 +42,7 @@ router.post('/login', (req, res) => {
         });
 });
 
-router.get('/users', (req, res) => {
+router.get('/users', restricted, (req, res) => {
     Register.find()
         .then(users => {
             res.json(users);
