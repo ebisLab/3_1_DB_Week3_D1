@@ -3,10 +3,6 @@ const Register = require('./register-model.js');
 const bcrypt = require('bcryptjs');
 const router = express.Router();
 
-// router.get('/', (req, res) => {
-//     res.send("It's alive!");
-// });
-
 router.get('/', (req, res) => {
 
     const name = req.query.name
@@ -44,5 +40,14 @@ router.post('/login', (req, res) => {
             res.status(500).json(error);
         });
 });
+
+router.get('/users', (req, res) => {
+    Register.find()
+        .then(users => {
+            res.json(users);
+        })
+        .catch(err => res.send(err));
+});
+
 
 module.exports = router;
