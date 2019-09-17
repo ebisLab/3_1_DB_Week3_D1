@@ -10,7 +10,7 @@ const sessionConfig = {
     name: 'chocolatechip',
     secret: 'keep it secrt, keep it safe',
     cookie: {
-        maxAge: 1000 * 60,
+        maxAge: 1000 * 60 * 60, //milliseconds
         secure: false, //true in production, false in development
         httpOnly: true,
     },
